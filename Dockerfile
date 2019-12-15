@@ -7,4 +7,4 @@ COPY static /static
 COPY templates /templates
 WORKDIR /
 
-CMD ["register.py"]
+CMD ["python","register.py"]
