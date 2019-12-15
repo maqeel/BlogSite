@@ -13,9 +13,11 @@ pipeline {
 		stage('Test') {
 			steps {
 				sh 'docker container rm -f blogTest || true'
-				sh 'docker container run -p 5000:5000 --name blogTest -d aqeel4mpak/blog_site'
+				sh 'docker container run -p 3000:5000 --name blogTest -d aqeel4mpak/blog_site'
 				sh 'sleep 30'
-				sh 'curl -I http://localhost:5000'
+				sh 'curl -I http://localhost:3000'
+				sh 'docker container stop blogTest || true'
+				sh 'docker container rm -f blogTest || true'
 			}
 		}
 		stage('Publish') {
