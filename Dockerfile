@@ -1,6 +1,6 @@
 FROM python:3.6-slim
 
-LABEL SITE_LABEL=BlogSite
+LABEL SITE_LABEL=SiteLabel
 
 RUN pip install psycopg2-binary Flask Flask-Bcrypt Flask-Login Flask-SQLAlchemy Flask-WTF WTForms
 
